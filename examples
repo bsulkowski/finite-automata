@@ -1,0 +1,28 @@
+* wyrazenie -> automat
+	e3 -> l3
+
+* accepts
+	l3
+
+* automat -> wyrazenie
+	a1
+
+* determinizacja
+	a2
+
+* minimalizacja ( [+] -> wyrazenie )
+	a3
+
+* accept
+	l3
+
+* invert
+	l3
+
+* intersect
+	l5 r6
+
+* wyszukiwanie
+
+	slowo "ababb"
+

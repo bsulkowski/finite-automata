@@ -1,0 +1,21 @@
+#use "utilities.mli";;
+#use "utilities.ml";;
+#use "map.mli";;
+#use "map.ml";;
+#use "set.mli";;
+#use "set.ml";;
+#use "graph.mli";;
+#use "graph.ml";;
+#use "alphabet.mli";;
+#use "alphabet.ml";;
+#use "expression.mli";;
+#use "expression.ml";;
+#use "automate.mli";;
+#use "automate.ml";;
+#use "language.mli";;
+#use "language.ml";;
+
+open Alphabet;;
+open Expression;;
+open Automate;;
+open Language;;
