@@ -1,7 +1,7 @@
-(*      Bartosz Su³kowski       *)
+(*      Bartosz SuÅ‚kowski       *)
 (*      11.01.2004              *)
 (*                              *)
-(*      jêzyki regularne        *)
+(*      jÄ™zyki regularne        *)
 
 module type LANGUAGE = sig
 
@@ -20,24 +20,24 @@ val iterate : language -> language
 (* modyfikatory *)
 val intersect : language -> language -> language
 val reverse : language -> language
-(* dope³nienie jêzyka *)
+(* dopeÅ‚nienie jÄ™zyka *)
 val invert : language -> language
 
 (* selektory *)
-(* czy s³owo nale¿y do jêzyka *)
+(* czy sÅ‚owo naleÅ¼y do jÄ™zyka *)
 val accepts : language -> Alphabet.word -> bool
-(* czy pewien prefix s³owa nale¿y do jêzyka *)
+(* czy pewien prefix sÅ‚owa naleÅ¼y do jÄ™zyka *)
 val accepts_prefix : language -> Alphabet.word -> bool
-(* czy jêzyk jest pusty *)
+(* czy jÄ™zyk jest pusty *)
 val is_empty : language -> bool
-(* czy jêzyk jest nieskoñczony *)
+(* czy jÄ™zyk jest nieskoÅ„czony *)
 val is_finite : language -> bool
 
-(* konwersja miêdzy wyra¿eniami *)
+(* konwersja miÄ™dzy wyraÅ¼eniami *)
 val of_expression : Expression.expression -> language
 val to_expression : language -> Expression.expression
 
-(* konwersja miêdzy automatami *)
+(* konwersja miÄ™dzy automatami *)
 val of_automate : 'a Automate.automate -> language
 val to_automate : language -> int Automate.automate
 

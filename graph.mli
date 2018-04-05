@@ -1,4 +1,4 @@
-(*      Bartosz Su≥kowski       *)
+(*      Bartosz Su≈Çkowski       *)
 (*      11.01.2004              *)
 (*                              *)
 (*      grafy skierowane        *)

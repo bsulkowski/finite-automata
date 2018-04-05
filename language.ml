@@ -1,7 +1,7 @@
-(*      Bartosz Su³kowski       *)
+(*      Bartosz SuÅ‚kowski       *)
 (*      11.01.2004              *)
 (*                              *)
-(*      jêzyki regularne        *)
+(*      jÄ™zyki regularne        *)
 
 module Language : LANGUAGE = struct
 
@@ -10,8 +10,8 @@ open Utilities
 open Expression
 
 
-(* jêzyk jest opisywany poprzez akceptuj±cy go
-   automat skoñczony, o stanach bêd±cych liczbami ca³kowitymi *)
+(* jÄ™zyk jest opisywany poprzez akceptujÄ…cy go
+   automat skoÅ„czony, o stanach bÄ™dÄ…cych liczbami caÅ‚kowitymi *)
 type language = int Automate.automate
 
 type equation = int * (int, expression) Map.map * expression
@@ -167,8 +167,8 @@ let rec of_expression = function
   | Iteration e -> iterate (of_expression e)
 
 
-(* uk³ad równañ opisuj±cy jêzyki generowane przez
-   poszczególne stany automatu *)
+(* ukÅ‚ad rÃ³wnaÅ„ opisujÄ…cy jÄ™zyki generowane przez
+   poszczegÃ³lne stany automatu *)
 let equations a =
     let eq q =
         let add_letter c m =
@@ -183,7 +183,7 @@ let equations a =
                 Epsilon else Empty)
     in Set.foldr (compose push eq) [] (Automate.states a)
 
-(* podstawia pierwsze równanie w drugim *)    
+(* podstawia pierwsze rÃ³wnanie w drugim *)    
 let substitute (q1, m1, f1) (q2, m2, f2) =
     let alpha =
         try Expression.concatenate (Map.apply m2 q1)
@@ -194,7 +194,7 @@ let substitute (q1, m1, f1) (q2, m2, f2) =
                 (Map.update (q1, Empty) m2)
         ,Expression.sum (alpha f1) f2)
 
-(* upraszcza równanie: "L = wL + M" do postaci "L = w*M" *)
+(* upraszcza rÃ³wnanie: "L = wL + M" do postaci "L = w*M" *)
 let simplify (q, m, f) =
     let alpha =
         try Expression.concatenate (Expression.iterate (Map.apply m q))
@@ -204,7 +204,7 @@ let simplify (q, m, f) =
         ,Map.map alpha (Map.update (q, Empty) m)
         ,alpha f)
 
-(* rozwi±zuje dany uk³ad równañ *)        
+(* rozwiÄ…zuje dany ukÅ‚ad rÃ³wnaÅ„ *)        
 let solve equations =
     let rec solve2 solved = function
             [] -> List.map (function (q, m, f) -> (q, f)) solved

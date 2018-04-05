@@ -1,4 +1,4 @@
-(*      Bartosz Su³kowski       *)
+(*      Bartosz SuÅ‚kowski       *)
 (*      11.01.2004              *)
 (*                              *)
 (*      alfabet                 *)
@@ -7,15 +7,15 @@ module type ALPHABET = sig
         
 (* litera *)        
 type letter = char
-(* s³owo *)
+(* sÅ‚owo *)
 type word = letter list
 
-(* wczytuje s³owo z napisu *)
+(* wczytuje sÅ‚owo z napisu *)
 val read : string -> word
-(* wczytuje s³owo z liczby *)
+(* wczytuje sÅ‚owo z liczby *)
 val read_int : int -> word
 
-(* wypisuje s³owo na ekranie *)
+(* wypisuje sÅ‚owo na ekranie *)
 val write : word -> unit
 
 end;;

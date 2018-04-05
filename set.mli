@@ -1,7 +1,7 @@
-(*      Bartosz Su≥kowski       *)
+(*      Bartosz Su≈Çkowski       *)
 (*      11.01.2004              *)
 (*                              *)
-(*      zbiory skoÒczone        *)
+(*      zbiory sko≈Ñczone        *)
 
 module type SET = sig
 

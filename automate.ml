@@ -1,7 +1,7 @@
-(*      Bartosz Su³kowski       *)
+(*      Bartosz SuÅ‚kowski       *)
 (*      11.01.2004              *)
 (*                              *)
-(*      automaty skoñczone      *)
+(*      automaty skoÅ„czone      *)
 
 module Automate : AUTOMATE = struct
 
@@ -13,14 +13,14 @@ open Alphabet
 type 'a automate = {
         (* alfabet *)
         alphabet : Alphabet.letter Set.set;
-        (* zbiór stanów automatu *)
+        (* zbiÃ³r stanÃ³w automatu *)
         states : 'a Set.set;
-        (* zbiór stanów pocz±tkowych *)
+        (* zbiÃ³r stanÃ³w poczÄ…tkowych *)
         initial_states : 'a Set.set;
-        (* zbiór stanów akceptuj±cych *)
+        (* zbiÃ³r stanÃ³w akceptujÄ…cych *)
         final_states : 'a Set.set;
-        (* relacja przej¶cia, przechowywana w postaci mapy:
-           litera alfabetu -> graf przej¶æ miêdzy stanami poprzez tê literê *)
+        (* relacja przejÅ›cia, przechowywana w postaci mapy:
+           litera alfabetu -> graf przejÅ›Ä‡ miÄ™dzy stanami poprzez tÄ™ literÄ™ *)
         map : (Alphabet.letter, 'a Graph.graph) Map.map
 }
 
@@ -65,10 +65,10 @@ let back_step a =
                         (compose (step_any a) Set.singleton))
                 (step_any (rev_a) qs)
 
-(* wyznacza elementy zbioru, do których mo¿na doj¶æ od <x0>
-   za pomoc± przej¶cia <n> (tzn. a --> b, je¶li b <- (n a)
-   inaczej mówi±c: traverse n x0 =
-           obraz domkniêcia przechodnio-zwrotnego relacji n zbioru x0 *)
+(* wyznacza elementy zbioru, do ktÃ³rych moÅ¼na dojÅ›Ä‡ od <x0>
+   za pomocÄ… przejÅ›cia <n> (tzn. a --> b, jeÅ›li b <- (n a)
+   inaczej mÃ³wiÄ…c: traverse n x0 =
+           obraz domkniÄ™cia przechodnio-zwrotnego relacji n zbioru x0 *)
 let traverse n x0 =
         let rec advance x x1 =
                 if not (Set.is_empty x1) then
@@ -139,7 +139,7 @@ let homomorphism relation =
             in foldl (Map.update_with min) m [(b, c); (a, c)]
         in Map.apply (Set.foldr f Map.empty relation)
 
-(* relacja syntaktyczna dla stanów automatu
+(* relacja syntaktyczna dla stanÃ³w automatu
    (p,q) <- syntactic_relation A, wtw gdy L(A,p) = L(A,q) *)
 let syntactic_relation a =
     let final = final_states a

@@ -1,16 +1,16 @@
-(*      Bartosz Su³kowski       *)
+(*      Bartosz SuÅ‚kowski       *)
 (*      11.01.2004              *)
 (*                              *)
-(*      automaty skoñczone      *)
+(*      automaty skoÅ„czone      *)
 
 module type AUTOMATE = sig
 
 type 'a automate
 
 (* konstruktor *)
-(* u¿ycie: create alfabet zbiór_stanów stany_pocz±tkowe stany_koñcowe
- *              relacja_prze¶cia
- * gdzie relacja_przej¶cia c q = { p : q -c-> p } *)
+(* uÅ¼ycie: create alfabet zbiÃ³r_stanÃ³w stany_poczÄ…tkowe stany_koÅ„cowe
+ *              relacja_przeÅ›cia
+ * gdzie relacja_przejÅ›cia c q = { p : q -c-> p } *)
 val create :
         Alphabet.letter Set.set -> 'a Set.set -> 'a Set.set -> 'a Set.set
      -> (Alphabet.letter -> 'a -> 'a Set.set)
@@ -20,22 +20,22 @@ val create :
 val alphabet : 'a automate -> Alphabet.letter Set.set
 (* stany automatu *)
 val states : 'a automate -> 'a Set.set
-(* relacja przej¶cia miêdzy stanami *)
+(* relacja przejÅ›cia miÄ™dzy stanami *)
 val delta : 'a automate -> Alphabet.letter -> 'a -> 'a Set.set 
 
-(* step a c qs = { p : istnieje q<-qs, ¿e (q -c-> p) } *)
+(* step a c qs = { p : istnieje q<-qs, Å¼e (q -c-> p) } *)
 val step : 'a automate -> Alphabet.letter -> 'a Set.set -> 'a Set.set
-(* step_any a qs = { p : istnieje q<-qs i c<-alphabet a, ¿e (q -c-> p) } *)
+(* step_any a qs = { p : istnieje q<-qs i c<-alphabet a, Å¼e (q -c-> p) } *)
 val step_any : 'a automate -> 'a Set.set -> 'a Set.set
 (* back_step a qs =
    { p : jesli (p -c-> q), to q<-qs oraz dla pewnych q i c jest (p -c-> q) } *)
 val back_step : 'a automate -> 'a Set.set -> 'a Set.set
 
-(* stany pocz±tkowe *)
+(* stany poczÄ…tkowe *)
 val initial_states : 'a automate -> 'a Set.set
-(* stany akceptuj±ce *)
+(* stany akceptujÄ…ce *)
 val final_states : 'a automate -> 'a Set.set
-(* stany osi±galne *)
+(* stany osiÄ…galne *)
 val reachable_states : 'a automate -> 'a Set.set
 (* stany produktywne *)
 val productive_states : 'a automate -> 'a Set.set
@@ -44,25 +44,25 @@ val strong_productive_states : 'a automate -> 'a Set.set
 (* stany ograniczone *)
 val finite_states : 'a automate -> 'a Set.set
 
-(* skleja wed³ug danej funkcji stany automatu
- * (je¶li j±dro funkcji jest kongruencj± dla tego automatu,
- * to otrzymujemy w ten sposób automat ilorazowy) *)
+(* skleja wedÅ‚ug danej funkcji stany automatu
+ * (jeÅ›li jÄ…dro funkcji jest kongruencjÄ… dla tego automatu,
+ * to otrzymujemy w ten sposÃ³b automat ilorazowy) *)
 val map : ('a -> 'b) -> 'a automate -> 'b automate
-(* zmienia nazwy stanów na liczby naturalne *)
+(* zmienia nazwy stanÃ³w na liczby naturalne *)
 val states_to_int : 'a automate -> int automate
 
-(* redukcja stanów nieosi±galnych *)
+(* redukcja stanÃ³w nieosiÄ…galnych *)
 val reduce : 'a automate -> 'a automate
 (* determinizacja *)
 val determinize : 'a automate -> 'a list automate
 (* minimalizacja automatu deterministycznego
- * (dla automatu niedeterministycznego wynik jest nieokre¶lony) *)
+ * (dla automatu niedeterministycznego wynik jest nieokreÅ›lony) *)
 val minimalize : 'a automate -> 'a automate
-(* odwrócenie kierunku przej¶æ w automacie *)
+(* odwrÃ³cenie kierunku przejÅ›Ä‡ w automacie *)
 val reverse : 'a automate -> 'a automate
 
-(* na podstawie funkcji opisuj±cej stany automatu
- * zwraca s³owo opisuj±ce automat *)
+(* na podstawie funkcji opisujÄ…cej stany automatu
+ * zwraca sÅ‚owo opisujÄ…ce automat *)
 val to_word : ('a -> Alphabet.word) -> 'a automate -> Alphabet.word
 
 end;;

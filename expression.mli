@@ -1,7 +1,7 @@
-(*      Bartosz Su³kowski       *)
+(*      Bartosz SuÅ‚kowski       *)
 (*      11.01.2004              *)
 (*                              *)
-(*      wyra¿enia regularne     *)
+(*      wyraÅ¼enia regularne     *)
 
 module type EXPRESSION = sig
 
@@ -13,15 +13,15 @@ type expression =
       | Concatenation of expression * expression
       | Iteration of expression
 
-(* funkcje zwracaj±ce odpowiednie wyra¿enie, dokonuj±ce skróceñ *)
+(* funkcje zwracajÄ…ce odpowiednie wyraÅ¼enie, dokonujÄ…ce skrÃ³ceÅ„ *)
 val sum : expression -> expression -> expression
 val concatenate : expression -> expression -> expression
 val iterate : expression -> expression
 
-(* zwraca wyra¿enie okre¶laj±ce dane s³owo
- * (ale sk³adaj±ce siê tylko ze zwyk³ych liter) *)
+(* zwraca wyraÅ¼enie okreÅ›lajÄ…ce dane sÅ‚owo
+ * (ale skÅ‚adajÄ…ce siÄ™ tylko ze zwykÅ‚ych liter) *)
 val of_word : Alphabet.word -> expression
-(* zapisuje wyra¿enie jako s³owo *)
+(* zapisuje wyraÅ¼enie jako sÅ‚owo *)
 val to_word : expression -> Alphabet.word
 
 end;;

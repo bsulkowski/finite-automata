@@ -1,4 +1,4 @@
-(*      Bartosz Su砶owski       *)
+(*      Bartosz Su艂kowski       *)
 (*      11.01.2004              *)
 (*                              *)
 (*      grafy skierowane        *)
@@ -9,7 +9,7 @@ module Graph : GRAPH = struct
 open Utilities
 
 
-(* mapa: wierzcho砮k -> (zbi髍 nast阷nik體, zbi髍 poprzednik體) *)
+(* mapa: wierzcho艂ek -> (zbi贸r nast臋pnik贸w, zbi贸r poprzednik贸w) *)
 type 'a graph = ('a, 'a Set.set * 'a Set.set) Map.map
 
 

@@ -1,7 +1,7 @@
-(*      Bartosz Su≥kowski       *)
+(*      Bartosz Su≈Çkowski       *)
 (*      11.01.2004              *)
 (*                              *)
-(*      wyraøenia regularne     *)
+(*      wyra≈ºenia regularne     *)
 
 module Expression : EXPRESSION = struct
 
